@@ -20,6 +20,15 @@ function nextMentor() {
     document.getElementById('head-img').src = MENTORS[mentorIndex]
 }
 
+function previousMentor() {
+    if (mentorIndex == 0) {
+        mentorIndex = MENTORS.length - 1;
+    } else {
+        mentorIndex -= 1;
+    }
+    document.getElementById('head-img').src = MENTORS[mentorIndex]
+}
+
 
 //Drag and Drop
 //add event listeners
@@ -68,5 +77,5 @@ function dragLeave(event) {
 function dragDrop(event) {
     console.log(this.id);
 
-    event.target.setAttribute('src', new_cloth);
+    event.target.setAttribute('src', '/static/images/cloths/gucci-pan-builder-top.png');
 }
