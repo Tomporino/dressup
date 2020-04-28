@@ -9,18 +9,18 @@
     <div class="content_wrapper">
         <div class="full-body" id="box">
             <div id="head-image"><div><button class="change-mentor" id="prev" onclick="previousMentor()">Prev</button></div><img class="ibody" id="head-img"><div><button class="change-mentor" id="next" onclick="nextMentor()">Next</button></div></div
-            ><div id="body-image"><img class="ibody" src="/static/images/cloths/builder-daddys-top.png" alt="builder-yellow-dress" ></div
+            ><div id="body-image"><img class="ibody" id="top" src="/static/images/cloths/builder-daddys-top.png" alt="builder-yellow-dress" ></div
             ><div id="leg-image"><div></div><img class="ibody" src="/static/images/cloths/builder-jeanshort-bottom.png"></div>
         </div>
         <div class="clothes" id="box">
-            {% for row in image_list %}
-                <div class="row">
-                    {% for image in row %}
-                        <div class="cloth_slot">
-                            <img src="static/images/clothes/{{ image }}" id="slot" draggable="true">
-                        </div>
-                    {% endfor %}
+            {% for row in tops %}
+            <div class="row">
+                {% for top in row %}
+                <div class="cloth_slot">
+                    <img src="static/images/cloths/{{ top }}" id="slot" draggable="true">
                 </div>
+                {% endfor %}
+            </div>
             {% endfor %}
         </div>
     </div>
