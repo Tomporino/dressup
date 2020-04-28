@@ -6,18 +6,18 @@
     <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='style/style.css') }}>
 </head>
 <body>
-    <div class="content_wrapper" id="box">
-        <div class="full-body">
-            <div><img class="ibody" id="head-image" src="/static/images/bodies/bence2.png" alt="scumha-pixelglass"></div
-            ><div><img class="ibody" id="body-image" src="/static/images/cloths/builder-daddys-top.png" alt="builder-yellow-dress" ></div
-            ><div><img class="ibody" id="leg-image" src="/static/images/cloths/builder-jeanshort-bottom.png"></div>
+    <div class="content_wrapper">
+        <div class="full-body" id="box">
+            <div id="head-image"><div></div><img class="ibody" src="/static/images/bodies/bence2.png" alt="scumha-pixelglass"></div
+            ><div id="body-image"><img class="ibody" src="/static/images/cloths/builder-daddys-top.png" alt="builder-yellow-dress" ></div
+            ><div id="leg-image"><div></div><img class="ibody" src="/static/images/cloths/builder-jeanshort-bottom.png"></div>
         </div>
         <div class="clothes" id="box">
             {% for row in image_list %}
                 <div class="row">
                     {% for image in row %}
                         <div class="cloth_slot">
-                            <img src="static/images/clothes/{{ image }}" id="slot">
+                            <img src="static/images/clothes/{{ image }}" id="slot" draggable="true">
                         </div>
                     {% endfor %}
                 </div>

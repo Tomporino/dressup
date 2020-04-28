@@ -1,6 +1,7 @@
 html body {
     min-height: 100vh;
-
+    background-image: url("/static/images/background/room1.png");
+    background-size: cover;
 }
 
 
@@ -13,22 +14,29 @@ html body {
 
 #box {
     height: 600px;
-    border: 1px solid black;
 }
 
 .clothes {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
+    background: silver;
+    opacity: 80%;
 }
 
 .row {
+    margin-top: 15px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
 }
 
 #slot {
+    display: inline-block;
     height: 150px;
     width: 150px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid black;
 }
 
 .full-body {
@@ -37,12 +45,19 @@ html body {
 
 .ibody {
     display: block;
+    height: 200px;
 }
 
 #head-image {
-    margin-left: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 #body-image {
     margin-left: 3px;
+}
+
+#leg-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
