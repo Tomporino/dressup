@@ -17,7 +17,7 @@ function nextMentor() {
     } else {
         mentorIndex = 0
     }
-    document.getElementById('head-img').src = MENTORS[mentorIndex]
+    document.getElementById('head-img').src = MENTORS[mentorIndex];
 }
 
 
@@ -67,6 +67,5 @@ function dragLeave(event) {
 
 function dragDrop(event) {
     console.log(this.id);
-
     event.target.setAttribute('src', new_cloth);
 }
