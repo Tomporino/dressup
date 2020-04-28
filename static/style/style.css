@@ -7,37 +7,37 @@ body {
     border: 1px solid black;
 }
 
-.content_wrapper {
-    height: inherit;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-}
+/*.content_wrapper {*/
+/*    height: inherit;*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 2fr;*/
+/*}*/
 
-#box {
-    height: inherit;
-}
+/*#box {*/
+/*    height: inherit;*/
+/*}*/
 
-.full-body {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-}
+/*.full-body {*/
+/*    display: grid;*/
+/*    grid-template-rows: 1fr 1fr 1fr;*/
+/*}*/
 
-.full-body div {
-    border: 1px solid black;
-    height: 100%;
-}
+/*.full-body div {*/
+/*    border: 1px solid black;*/
+/*    height: 100%;*/
+/*}*/
 
-.clothes {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-}
+/*.clothes {*/
+/*    display: grid;*/
+/*    grid-template-rows: 1fr 1fr 1fr;*/
+/*}*/
 
-.row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
+/*.row {*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 1fr 1fr;*/
+/*}*/
 
-.slot {
-    border: 1px solid black;
-    height: 100%;
-}
+/*.slot {*/
+/*    border: 1px solid black;*/
+/*    height: 100%;*/
+/*}*/
