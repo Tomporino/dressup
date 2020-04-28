@@ -32,8 +32,8 @@ html body {
 
 #slot {
     display: inline-block;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     cursor: pointer;
     position: relative;
     border: 1px solid black;
@@ -45,11 +45,12 @@ html body {
 
 .ibody {
     display: block;
-    height: 200px;
+
 }
 
 #head-image {
     display: grid;
+    margin-left: 296px;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -61,3 +62,5 @@ html body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+

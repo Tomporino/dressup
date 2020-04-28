@@ -1,5 +1,7 @@
 const fill = document.querySelector('.fill');
 const empties = document.querySelectorAll('.empty'); //all empty div
+const menuOptions = document.querySelectorAll('.menu-options');
+
 
 fill.addEventListener('dragstart', dragStart);
 fill.addEventListener('dragend', dragEnd);
@@ -13,6 +15,9 @@ for (const empty of empties) {
     empty.addEventListener('drop', dragDrop);
 }
 
+menuOptions.addEventListener('click', chooseOne);
+
+
 //Drag  Events
 
 function dragStart() {
@@ -22,23 +27,33 @@ function dragStart() {
 }
 
 function dragEnd() {
+    console.log('end')
     this.className = 'fill';
 }
 
 function dragOver(e) {
     e.preventDefault();
+    console.log('over')
 }
 
 function dragEnter(e) {
     e.preventDefault();
+    console.log('enter')
     this.className += ' hovered';
 }
 
 function dragLeave() {
+    console.log('leave')
     this.className = 'empty'; //clears hovered
+
 }
 
 function dragDrop() {
+    console.log('DROP')
     this.className = 'empty';
-    this.append(fill);
+    this.style.background = 'url("/static/bence-roundglass.png")';
+}
+
+function chooseOne(event) {
+    console.log(event);
 }

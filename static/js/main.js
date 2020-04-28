@@ -37,11 +37,14 @@ for (const slot of cloth_slots) {
 }
 
 //drag functions
+var new_cloth;
 
-function dragStart() {
+function dragStart(event) {
     console.log('start')
     //callback arrow so invisible will happen after hold started
     // setTimeout(() => this.className = 'invisible', 0);
+    new_cloth = event.target.getAttribute('src')
+    console.log(new_cloth)
 }
 
 function dragEnd() {
@@ -50,18 +53,20 @@ function dragEnd() {
 
 function dragOver(e) {
     console.log('over')
-    //e.preventDefault();
+    e.preventDefault();
 }
 
 function dragEnter(e) {
     //e.preventDefault();
-    console.log('enter')
+    console.log('enter');
 }
 
-function dragLeave() {
-    console.log('leave')
+function dragLeave(event) {
+    console.log('leave');
 }
 
-function dragDrop() {
-    console.log(this.id)
+function dragDrop(event) {
+    console.log(this.id);
+
+    event.target.setAttribute('src', new_cloth);
 }
