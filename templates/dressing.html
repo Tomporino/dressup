@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>DressUp!</title>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='style/style.css') }}>
 </head>
 <body>
-
+    <div class="content_wrapper" id="box">
+        <div class="full-body">
+            <div id="head">HEAD</div>
+            <div id="body">BODY</div>
+            <div id="legs">LEGS</div>
+        </div>
+        <div class="clothes" id="box">
+            {% for x in range(3) %}
+            <div id="cloth_row">
+                {% for y in range(3) %}
+                <div id="cloth">CLOTH</div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="static/js/jquery-3.5.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

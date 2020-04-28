@@ -1,0 +1,43 @@
+html body {
+    min-height: 100vh;
+    margin: 10px;
+}
+
+body {
+    border: 1px solid black;
+}
+
+.content_wrapper {
+    height: inherit;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+#box {
+    height: inherit;
+}
+
+.full-body {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.full-body div {
+    border: 1px solid black;
+    height: 100%;
+}
+
+.clothes {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#cloth_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#cloth {
+    border: 1px solid black;
+    height: 100%;
+}
