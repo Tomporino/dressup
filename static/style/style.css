@@ -11,29 +11,25 @@ html body {
     grid-template-columns: 1fr 2fr;
 }
 
-/*#box {*/
-/*    height: inherit;*/
-/*}*/
+#box {
+    height: 600px;
+    border: 1px solid black;
+}
 
+.clothes {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
 
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 
-/*.clothes {*/
-/*    display: grid;*/
-/*    grid-template-rows: 1fr 1fr 1fr;*/
-/*}*/
-
-/*.row {*/
-/*    display: grid;*/
-/*    grid-template-columns: 1fr 1fr 1fr;*/
-/*}*/
-
-/*.slot {*/
-/*    border: 1px solid black;*/
-/*    height: 100%;*/
-/*}*/
-
-
-
+#slot {
+    height: 150px;
+    width: 150px;
+}
 
 .full-body {
     display: block;

@@ -13,5 +13,3 @@
 //
 // createSlots(3, 3)
 
-let cloth = document.createElement('img')
-cloth.src = 'static/images/clothes/cloth1.png'
