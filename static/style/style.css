@@ -22,12 +22,12 @@ html body {
     grid-template-rows: 1fr 1fr 1fr;
 }
 
-#cloth_row {
+.row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-#cloth {
+.slot {
     border: 1px solid black;
     height: 100%;
 }
