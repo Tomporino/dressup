@@ -1,3 +1,7 @@
+.ibody {
+    display: block;
+}
+
 body {
     background: sandybrown;
 }
@@ -32,4 +36,8 @@ body {
 
 .invisible {
     display: none;
+}
+
+.ibody {
+    display: block;
 }
