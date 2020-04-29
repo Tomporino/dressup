@@ -183,7 +183,7 @@ function dragDrop(event) {
         event.target.setAttribute('src', cloth_path);
         document.getElementById('top').classList.remove('body-size');
         document.getElementById('leg-image').style.visibility = 'hidden';
-        document.getElementById('body-image').classList.remove('dress-margin');
+        document.getElementById('body-image').classList.add('dress-margin');
 
     } else {
             if (cloth_path.search('top') != -1) {
