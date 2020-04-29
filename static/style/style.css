@@ -14,7 +14,7 @@ html body {
     height: 600px;
 }
 
-.clothes {
+#clothes {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -38,7 +38,6 @@ html body {
 
 .ibody {
     display: block;
-
 }
 
 #head-image {

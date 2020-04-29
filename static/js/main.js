@@ -17,8 +17,25 @@ function defaultBody() {
     document.getElementById('top').src = '/static/images/body/default_top.png';
     document.getElementById('bottom').src = '/static/images/body/default_bottom.png';
 }
+
+function setTops(tops) {
+    const class_cloth = document.getElementById('clothes')
+    for (t of tops) {
+        const top = document.createElement('div');
+        top.className = 'cloth_slot';
+        const img = document.createElement('img');
+        img.setAttribute('draggable', 'true');
+        img.setAttribute('src', `static/images/tops/${t}`);
+        top.append(img);
+        class_cloth.append(top)
+    }
+
+}
+
 defaultBody();
 defaultHead();
+
+//skins and cloth
 
 function nextMentor() {
     if (mentorIndex < MENTORS.length - 1) {
@@ -38,6 +55,13 @@ function previousMentor() {
     document.getElementById('head-img').src = MENTORS[mentorIndex]
 }
 
+function loadTops() {
+
+}
+
+function loadBottoms() {
+    document.getElementById()
+}
 
 //Drag and Drop
 //add event listeners
@@ -64,26 +88,24 @@ function dragStart(event) {
 }
 
 function dragEnd() {
-    console.log('end');
+    //console.log('end');
 }
 
 function dragOver(e) {
-    console.log('over')
+    //console.log('over')
     e.preventDefault();
 }
 
 function dragEnter(e) {
     //e.preventDefault();
-    console.log('enter');
+    //console.log('enter');
 }
 
 function dragLeave(event) {
-    console.log('leave');
+    //console.log('leave');
 }
 
 function dragDrop(event) {
-    console.log(this)
-    console.log(cloth_path)
     document.getElementById('top').src = cloth_path;
     cloth_path = ''
 }
