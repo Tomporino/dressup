@@ -85,8 +85,12 @@ function setBling(accessories) {
         img.setAttribute('src', `static/images/accessories/${a}`);
         console.log(currentKing.slice(21,26))
         console.log(img.getAttribute('src').slice(26,31))
-        bling.append(img);
-        class_cloth.append(bling)
+        if (currentKing.slice(21,26) == img.getAttribute('src').slice(26,31)){
+            bling.append(img);
+            class_cloth.append(bling)
+        }
+
+
     }
     addEventListeners();
 }
