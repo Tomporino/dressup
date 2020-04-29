@@ -7,6 +7,12 @@ const MENTORS = ['/static/images/heads/adam.png', '/static/images/heads/bence.pn
 let mentorIndex = 0;
 let cloth_path = '';
 
+//util
+
+function clearClothes() {
+    $('#clothes').empty();
+}
+
 //set defaults
 
 function defaultHead() {
@@ -19,6 +25,7 @@ function defaultBody() {
 }
 
 function setTops(tops) {
+    clearClothes();
     const class_cloth = document.getElementById('clothes')
     for (t of tops) {
         const top = document.createElement('div');
@@ -34,7 +41,8 @@ function setTops(tops) {
 }
 
 function setBottoms(bottoms) {
-    const class_cloth = document.getElementById('clothes')
+    clearClothes();
+    const class_cloth = document.getElementById('clothes');
     for (b of bottoms) {
         const bottom = document.createElement('div');
         bottom.className = 'cloth_slot';
