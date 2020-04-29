@@ -13,14 +13,10 @@
             ><div id="leg-image"><div></div><img class="ibody" id="bottom" src=""></div>
         </div>
         <div class="clothes" id="box">
-            {% for row in tops %}
-            <div class="row">
-                {% for top in row %}
+            {% for top in tops %}
                 <div class="cloth_slot">
                     <img src="static/images/tops/{{ top }}" id="slot" draggable="true">
                 </div>
-                {% endfor %}
-            </div>
             {% endfor %}
         </div>
     </div>
