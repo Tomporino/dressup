@@ -48,6 +48,21 @@ function setBottoms(bottoms) {
     addEventListeners();
 }
 
+function setDress(dresses) {
+    const class_cloth = document.getElementById('clothes')
+    for (d of dresses) {
+        const dress = document.createElement('div');
+        dress.className = 'cloth_slot';
+        const img = document.createElement('img');
+        img.id = 'slot'
+        img.setAttribute('draggable', 'true');
+        img.setAttribute('src', `static/images/dresses/${d}`);
+        dress.append(img);
+        class_cloth.append(dress)
+    }
+    addEventListeners();
+}
+
 defaultBody();
 defaultHead();
 
@@ -118,5 +133,13 @@ function dragLeave(event) {
 
 function dragDrop(event) {
     event.target.setAttribute('src', cloth_path);
+    if (cloth_path.slice(14,21) == 'dresses'){
+        document.getElementById('top').classList.remove('body-size')
+        document.getElementById('body-image').classList.add('dress-margin')
+    } else {
+        document.getElementById('top').classList.add('body-size')
+        document.getElementById('body-image').classList.remove('dress-margin')
+
+    }
     cloth_path = ''
 }
