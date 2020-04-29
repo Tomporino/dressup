@@ -178,25 +178,27 @@ function dragDrop(event) {
     } else {
         if (draggedItem.search('top') != -1) {
         event.target.setAttribute('src', cloth_path);
-        console.log('top')
-        document.getElementById('leg-image').style.visibility = 'visible';
-        document.getElementById('top').classList.add('body-size');
-        document.getElementById('body-image').classList.remove('dress-margin');
+        if (dressCheck.search('dress') != -1){
+            document.getElementById('leg-image').style.visibility = 'visible';
+            document.getElementById('top').classList.add('body-size');
+            document.getElementById('body-image').classList.remove('dress-margin');
+
+        }
+
         } else if (draggedItem.search('bottom') != -1) {
             if (dressCheck.search('dress') != -1){
                 document.getElementById('top').setAttribute('src', DEFAULT_TOP)
                 document.getElementById('top').classList.add('body-size');
-
+                document.getElementById('leg-image').style.visibility = 'visible';
+                document.getElementById('bottom').classList.add('leg-size');
+                document.getElementById('body-image').classList.remove('dress-margin');
             }
-        console.log('bottom')
-        document.getElementById('bottom').setAttribute('src', draggedItem)
-        document.getElementById('leg-image').style.visibility = 'visible';
-        document.getElementById('bottom').classList.add('body-size');
-        document.getElementById('body-image').classList.remove('dress-margin');
+            document.getElementById('bottom').setAttribute('src', draggedItem)
+
 
 
         } else {
-        event.target.setAttribute('src', cloth_path);
+            event.target.setAttribute('src', cloth_path);
         }
     }
     cloth_path = ''
