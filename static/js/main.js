@@ -5,6 +5,7 @@ const LEGS = document.querySelector('#leg-image');
 const MENTORS = ['/static/images/bodies/adam2.png', '/static/images/bodies/bence2.png', '/static/images/bodies/laci2.png', '/static/images/bodies/gabor2.png'];
 
 let mentorIndex = 0;
+let cloth_path = '';
 
 function defaultHead() {
     document.getElementById('head-img').src = MENTORS[mentorIndex];
@@ -18,6 +19,15 @@ function nextMentor() {
         mentorIndex = 0
     }
     document.getElementById('head-img').src = MENTORS[mentorIndex];
+}
+
+function previousMentor() {
+    if (mentorIndex == 0) {
+        mentorIndex = MENTORS.length - 1;
+    } else {
+        mentorIndex -= 1;
+    }
+    document.getElementById('head-img').src = MENTORS[mentorIndex]
 }
 
 
@@ -37,14 +47,12 @@ for (const slot of cloth_slots) {
 }
 
 //drag functions
-var new_cloth;
 
 function dragStart(event) {
     console.log('start')
     //callback arrow so invisible will happen after hold started
     // setTimeout(() => this.className = 'invisible', 0);
-    new_cloth = event.target.getAttribute('src')
-    console.log(new_cloth)
+    cloth_path = event.target.getAttribute('src')
 }
 
 function dragEnd() {
@@ -66,6 +74,8 @@ function dragLeave(event) {
 }
 
 function dragDrop(event) {
-    console.log(this.id);
-    event.target.setAttribute('src', new_cloth);
+    console.log(this)
+    console.log(cloth_path)
+    document.getElementById('top').src = cloth_path;
+    cloth_path = ''
 }
