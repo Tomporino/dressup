@@ -125,6 +125,6 @@ function dragLeave(event) {
 }
 
 function dragDrop(event) {
-    document.getElementById('top').src = cloth_path;
+    event.target.setAttribute('src', cloth_path);
     cloth_path = ''
 }
