@@ -38,8 +38,8 @@ html body {
 
 #slot {
     display: inline-block;
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
     cursor: pointer;
     position: relative;
     border: 1px solid black;
@@ -79,10 +79,8 @@ html body {
 }
 
 .dress-margin {
-    padding-right: 110px;
-}
-.dress-display-none {
-    display: none;
+    padding-right: 95px;
+    padding-left: 26px;
 }
 
 .leg-image-empty-space {
@@ -97,6 +95,14 @@ html body {
     border-radius: 3px;
 }
 
+.dress-size {
+    width: 650px;
+    height: 658px;
+}
+
+#head-image {
+    padding-left: 7px;
+}
 #music_player {
     text-align: right;
 }
