@@ -1,6 +1,6 @@
 html body {
     min-height: 100vh;
-    background-image: url("/static/images/background/room1.png");
+    background-image: url("/static/images/background/room1.jpg");
     background-size: cover;
 }
 
