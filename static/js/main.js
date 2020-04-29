@@ -3,9 +3,12 @@ const HEAD = document.querySelector('#head-image');
 const BODY = document.querySelector('#body-image');
 const LEGS = document.querySelector('#leg-image');
 const MENTORS = ['/static/images/heads/aadam.png', '/static/images/heads/bence.png', '/static/images/heads/llaci.png', '/static/images/heads/gabor.png'];
+const DEFAULT_TOP = '/static/images/body/default_top.png';
+
 
 let mentorIndex = 0;
 let cloth_path = '';
+let draggedItem;
 
 //util
 
@@ -83,14 +86,12 @@ function setBling(accessories) {
         img.id = 'slot'
         img.setAttribute('draggable', 'true');
         img.setAttribute('src', `static/images/accessories/${a}`);
-        console.log(currentKing.slice(21,26))
-        console.log(img.getAttribute('src').slice(26,31))
+
         if (currentKing.slice(21,26) == img.getAttribute('src').slice(26,31)){
             bling.append(img);
             class_cloth.append(bling)
         }
-
-
+        
     }
     addEventListeners();
 }
@@ -140,6 +141,7 @@ addEventListeners();
 
 function dragStart(event) {
     console.log('start')
+    draggedItem = event.target.getAttribute('src')
     //callback arrow so invisible will happen after hold started
     setTimeout(() => this.className = 'invisible', 0);
     cloth_path = event.target.getAttribute('src')
@@ -164,24 +166,37 @@ function dragLeave(event) {
 }
 
 function dragDrop(event) {
-    let e_targ = event.target.getAttribute('src');
-    event.target.setAttribute('src', cloth_path);
-    if (cloth_path.slice(14,21) == 'dresses'){
+    let dressCheck = document.getElementById('top').getAttribute('src')
 
+    if (cloth_path.slice(14,21) == 'dresses'){
+        event.target.setAttribute('src', cloth_path);
         document.getElementById('top').classList.remove('body-size');
         document.getElementById('body-image').classList.add('dress-margin');
         document.getElementById('leg-image').style.visibility = 'hidden';
         //document.getElementById('bottom').remove()
 
     } else {
-        if (e_targ.search('top')) {
+        if (draggedItem.search('top') != -1) {
+        event.target.setAttribute('src', cloth_path);
+        console.log('top')
         document.getElementById('leg-image').style.visibility = 'visible';
         document.getElementById('top').classList.add('body-size');
         document.getElementById('body-image').classList.remove('dress-margin');
-        } else {
-        document.getElementById('body-image').style.visibility = 'visible';
+        } else if (draggedItem.search('bottom') != -1) {
+            if (dressCheck.search('dress') != -1){
+                document.getElementById('top').setAttribute('src', DEFAULT_TOP)
+                document.getElementById('top').classList.add('body-size');
+
+            }
+        console.log('bottom')
+        document.getElementById('bottom').setAttribute('src', draggedItem)
+        document.getElementById('leg-image').style.visibility = 'visible';
         document.getElementById('bottom').classList.add('body-size');
-        document.getElementById('leg-image').classList.remove('dress-margin');
+        document.getElementById('body-image').classList.remove('dress-margin');
+
+
+        } else {
+        event.target.setAttribute('src', cloth_path);
         }
     }
     cloth_path = ''
