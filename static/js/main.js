@@ -7,9 +7,17 @@ const MENTORS = ['/static/images/heads/adam.png', '/static/images/heads/bence.pn
 let mentorIndex = 0;
 let cloth_path = '';
 
+//set defaults
+
 function defaultHead() {
     document.getElementById('head-img').src = MENTORS[mentorIndex];
 }
+
+function defaultBody() {
+    document.getElementById('top').src = '/static/images/body/default_top.png';
+    document.getElementById('bottom').src = '/static/images/body/default_bottom.png';
+}
+defaultBody();
 defaultHead();
 
 function nextMentor() {
