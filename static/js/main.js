@@ -24,6 +24,7 @@ function setTops(tops) {
         const top = document.createElement('div');
         top.className = 'cloth_slot';
         const img = document.createElement('img');
+        img.id = 'slot'
         img.setAttribute('draggable', 'true');
         img.setAttribute('src', `static/images/tops/${t}`);
         top.append(img);
