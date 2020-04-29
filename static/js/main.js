@@ -164,6 +164,7 @@ function dragLeave(event) {
 }
 
 function dragDrop(event) {
+    let e_targ = event.target.getAttribute('src');
     event.target.setAttribute('src', cloth_path);
     if (cloth_path.slice(14,21) == 'dresses'){
 
@@ -173,11 +174,15 @@ function dragDrop(event) {
         //document.getElementById('bottom').remove()
 
     } else {
+        if (e_targ.search('top')) {
         document.getElementById('leg-image').style.visibility = 'visible';
         document.getElementById('top').classList.add('body-size');
         document.getElementById('body-image').classList.remove('dress-margin');
-
-
+        } else {
+        document.getElementById('body-image').style.visibility = 'visible';
+        document.getElementById('bottom').classList.add('body-size');
+        document.getElementById('leg-image').classList.remove('dress-margin');
+        }
     }
     cloth_path = ''
 }
