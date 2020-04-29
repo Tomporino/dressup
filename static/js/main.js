@@ -166,9 +166,11 @@ function dragLeave(event) {
 }
 
 function dragDrop(event) {
+    console.log(event.target.parentElement.id)
     let dressCheck = document.getElementById('top').getAttribute('src')
+    if (event.target.parentElement.id == 'body-image'){
 
-    if (cloth_path.slice(14,21) == 'dresses'){
+        if (cloth_path.slice(14,21) == 'dresses'){
         event.target.setAttribute('src', cloth_path);
         document.getElementById('top').classList.remove('body-size');
         document.getElementById('body-image').classList.add('dress-margin');
@@ -176,16 +178,18 @@ function dragDrop(event) {
         //document.getElementById('bottom').remove()
 
     } else {
-        if (draggedItem.search('top') != -1) {
-        event.target.setAttribute('src', cloth_path);
-        if (dressCheck.search('dress') != -1){
-            document.getElementById('leg-image').style.visibility = 'visible';
-            document.getElementById('top').classList.add('body-size');
-            document.getElementById('body-image').classList.remove('dress-margin');
-
+            if (draggedItem.search('top') != -1) {
+                event.target.setAttribute('src', cloth_path);
+                if (dressCheck.search('dress') != -1) {
+                    document.getElementById('leg-image').style.visibility = 'visible';
+                    document.getElementById('top').classList.add('body-size');
+                    document.getElementById('body-image').classList.remove('dress-margin');
+                }
+            }
         }
 
-        } else if (draggedItem.search('bottom') != -1) {
+        } else if (event.target.parentElement.id == 'leg-image'){
+           if (draggedItem.search('bottom') != -1) {
             if (dressCheck.search('dress') != -1){
                 document.getElementById('top').setAttribute('src', DEFAULT_TOP)
                 document.getElementById('top').classList.add('body-size');
@@ -194,12 +198,11 @@ function dragDrop(event) {
                 document.getElementById('body-image').classList.remove('dress-margin');
             }
             document.getElementById('bottom').setAttribute('src', draggedItem)
-
-
-
-        } else {
+        }
+    }else if (event.target.parentElement.id == 'head-image' && (draggedItem.search('hat') != -1
+                                                            || draggedItem.search('glass') != -1)) {
             event.target.setAttribute('src', cloth_path);
         }
-    }
+
     cloth_path = ''
 }
