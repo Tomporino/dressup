@@ -2,7 +2,7 @@ const cloth_slots = document.querySelectorAll('.cloth_slot');
 const HEAD = document.querySelector('#head-image');
 const BODY = document.querySelector('#body-image');
 const LEGS = document.querySelector('#leg-image');
-const MENTORS = ['/static/images/bodies/adam2.png', '/static/images/bodies/bence2.png', '/static/images/bodies/laci2.png', '/static/images/bodies/gabor2.png'];
+const MENTORS = ['/static/images/heads/adam.png', '/static/images/heads/bence.png', '/static/images/heads/laci.png', '/static/images/heads/gabor.png'];
 
 let mentorIndex = 0;
 let cloth_path = '';
