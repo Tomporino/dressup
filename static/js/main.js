@@ -216,7 +216,3 @@ function dragDrop(event) {
     cloth_path = ''
 }
 
-function saveCharacter() {
-    let blob = new Blob(['saved_photo'], { type: 'image/png' })
-}
-

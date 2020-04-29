@@ -96,3 +96,7 @@ html body {
     border: 2px solid #B22222;
     border-radius: 3px;
 }
+
+#music_player {
+    text-align: right;
+}
