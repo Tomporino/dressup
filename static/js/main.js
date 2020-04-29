@@ -2,7 +2,7 @@ let cloth_slots = document.querySelectorAll('.cloth_slot');
 const HEAD = document.querySelector('#head-image');
 const BODY = document.querySelector('#body-image');
 const LEGS = document.querySelector('#leg-image');
-const MENTORS = ['/static/images/heads/adam.png', '/static/images/heads/bence.png', '/static/images/heads/laci.png', '/static/images/heads/gabor.png'];
+const MENTORS = ['/static/images/heads/aadam.png', '/static/images/heads/bence.png', '/static/images/heads/llaci.png', '/static/images/heads/gabor.png'];
 
 let mentorIndex = 0;
 let cloth_path = '';
@@ -57,6 +57,7 @@ function setBottoms(bottoms) {
 }
 
 function setDress(dresses) {
+    clearClothes();
     const class_cloth = document.getElementById('clothes')
     for (d of dresses) {
         const dress = document.createElement('div');
@@ -67,6 +68,25 @@ function setDress(dresses) {
         img.setAttribute('src', `static/images/dresses/${d}`);
         dress.append(img);
         class_cloth.append(dress)
+    }
+    addEventListeners();
+}
+
+function setBling(accessories) {
+    let currentKing = document.getElementById('head-img').getAttribute('src');
+    clearClothes();
+    const class_cloth = document.getElementById('clothes')
+    for (a of accessories) {
+        const bling = document.createElement('div');
+        bling.className = 'cloth_slot';
+        const img = document.createElement('img');
+        img.id = 'slot'
+        img.setAttribute('draggable', 'true');
+        img.setAttribute('src', `static/images/accessories/${a}`);
+        console.log(currentKing.slice(21,26))
+        console.log(img.getAttribute('src').slice(26,31))
+        bling.append(img);
+        class_cloth.append(bling)
     }
     addEventListeners();
 }
