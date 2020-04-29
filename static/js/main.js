@@ -33,6 +33,21 @@ function setTops(tops) {
     addEventListeners();
 }
 
+function setBottoms(bottoms) {
+    const class_cloth = document.getElementById('clothes')
+    for (b of bottoms) {
+        const bottom = document.createElement('div');
+        bottom.className = 'cloth_slot';
+        const img = document.createElement('img');
+        img.id = 'slot'
+        img.setAttribute('draggable', 'true');
+        img.setAttribute('src', `static/images/bottoms/${b}`);
+        bottom.append(img);
+        class_cloth.append(bottom)
+    }
+    addEventListeners();
+}
+
 defaultBody();
 defaultHead();
 
@@ -54,14 +69,6 @@ function previousMentor() {
         mentorIndex -= 1;
     }
     document.getElementById('head-img').src = MENTORS[mentorIndex]
-}
-
-function loadTops() {
-
-}
-
-function loadBottoms() {
-    document.getElementById();
 }
 
 //Drag and Drop
