@@ -4,8 +4,6 @@ html body {
     background-size: cover;
 }
 
-
-
 .content_wrapper {
     height: inherit;
     display: grid;
@@ -18,16 +16,11 @@ html body {
 
 .clothes {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
     background: silver;
     opacity: 80%;
-}
-
-.row {
-    margin-top: 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
 }
 
 #slot {
