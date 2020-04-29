@@ -83,7 +83,7 @@ for (const slot of cloth_slots) {
 function dragStart(event) {
     console.log('start')
     //callback arrow so invisible will happen after hold started
-    // setTimeout(() => this.className = 'invisible', 0);
+    setTimeout(() => this.className = 'invisible', 0);
     cloth_path = event.target.getAttribute('src')
 }
 
