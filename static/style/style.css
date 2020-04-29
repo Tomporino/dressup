@@ -14,6 +14,19 @@ html body {
     height: 600px;
 }
 
+.category_chooser{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.category {
+    background: #e6a0ff;
+    color: #B22222;
+    border: 2px solid #B22222;
+    border-radius: 3px;
+}
+
 #clothes {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -77,3 +90,9 @@ html body {
     height: 50px;
 }
 
+.change-mentor {
+    background: #e6a0ff;
+    color: #B22222;
+    border: 2px solid #B22222;
+    border-radius: 3px;
+}
