@@ -24,7 +24,10 @@ html body {
     background: #e6a0ff;
     color: #B22222;
     border: 2px solid #B22222;
-    border-radius: 3px;
+    height: 53px;
+    width: 250px;
+    margin-left: 60px;
+    border-radius:10px
 }
 
 #clothes {
@@ -105,4 +108,13 @@ html body {
 }
 #music_player {
     text-align: right;
+}
+.category {
+    ;
+}
+
+.change-mentor {
+    height: 40px;
+    width: 100px;
+
 }
