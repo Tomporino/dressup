@@ -1,4 +1,4 @@
-const cloth_slots = document.querySelectorAll('.cloth_slot');
+let cloth_slots = document.querySelectorAll('.cloth_slot');
 const HEAD = document.querySelector('#head-image');
 const BODY = document.querySelector('#body-image');
 const LEGS = document.querySelector('#leg-image');
@@ -30,7 +30,7 @@ function setTops(tops) {
         top.append(img);
         class_cloth.append(top)
     }
-
+    addEventListeners();
 }
 
 defaultBody();
@@ -61,23 +61,26 @@ function loadTops() {
 }
 
 function loadBottoms() {
-    document.getElementById()
+    document.getElementById();
 }
 
 //Drag and Drop
 //add event listeners
-
-for (const bodypart of [HEAD, BODY, LEGS]) {
+function addEventListeners() {
+    for (const bodypart of [HEAD, BODY, LEGS]) {
     bodypart.addEventListener('dragover', dragOver)
     bodypart.addEventListener('drop', dragDrop)
     bodypart.addEventListener('dragenter', dragEnter)
     bodypart.addEventListener('dragleave', dragLeave)
 }
-
-for (const slot of cloth_slots) {
+    cloth_slots = document.querySelectorAll('.cloth_slot');
+    for (let slot of cloth_slots) {
     slot.addEventListener('dragstart', dragStart);
     slot.addEventListener('dragend', dragEnd);
 }
+}
+
+addEventListeners();
 
 //drag functions
 
