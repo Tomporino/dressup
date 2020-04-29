@@ -95,6 +95,7 @@ function setBling(accessories) {
         }
         
     }
+
     addEventListeners();
 }
 
@@ -108,7 +109,15 @@ function nextBackground() {
     } else {
         backgroundIndex = 0
     }
-    document.body.style.background = 'url("$d")'
+    document.body.style.background = `url("${BACKGROUNDS[backgroundIndex]}")`;
+}
+function previousBackground() {
+    if (backgroundIndex < BACKGROUNDS.length - 1) {
+        backgroundIndex -= 1;
+    } else {
+        backgroundIndex = 0
+    }
+    document.body.style.background = `url("${BACKGROUNDS[backgroundIndex]}")`;
 }
 
 function nextMentor() {
@@ -183,19 +192,25 @@ function dragDrop(event) {
         event.target.setAttribute('src', cloth_path);
         document.getElementById('top').classList.remove('body-size');
         document.getElementById('leg-image').style.visibility = 'hidden';
-        document.getElementById('body-image').classList.add('dress-margin');
+        document.getElementById('top').classList.add('dress-margin');
+        document.getElementById('top').classList.add(('dress-size'));
 
     } else {
             if (cloth_path.search('top') != -1) {
                 if (dressCheck.search('dress') != 1){
+                    document.getElementById('top').classList.remove(('dress-margin'));
+                    document.getElementById('top').classList.remove(('dress-size'));
                     event.target.setAttribute('src', cloth_path);
                     document.getElementById('leg-image').style.visibility = 'visible';
                     document.getElementById('top').classList.add('body-size');
+
 
                 }
                 event.target.setAttribute('src', cloth_path);
                 }
             if (cloth_path.search('bottom') != -1 && dressCheck.search('dress') != -1 ) {
+                document.getElementById('top').classList.remove(('dress-margin'));
+                document.getElementById('top').classList.remove(('dress-size'));
                 document.getElementById('bottom').setAttribute('src', cloth_path);
                 document.getElementById('top').setAttribute('src', DEFAULT_TOP)
                 document.getElementById('leg-image').style.visibility = 'visible';
