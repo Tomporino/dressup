@@ -142,11 +142,17 @@ function dragLeave(event) {
 function dragDrop(event) {
     event.target.setAttribute('src', cloth_path);
     if (cloth_path.slice(14,21) == 'dresses'){
-        document.getElementById('top').classList.remove('body-size')
-        document.getElementById('body-image').classList.add('dress-margin')
+
+        document.getElementById('top').classList.remove('body-size');
+        document.getElementById('body-image').classList.add('dress-margin');
+        document.getElementById('leg-image').style.visibility = 'hidden';
+        //document.getElementById('bottom').remove()
+
     } else {
-        document.getElementById('top').classList.add('body-size')
-        document.getElementById('body-image').classList.remove('dress-margin')
+        document.getElementById('leg-image').style.visibility = 'visible';
+        document.getElementById('top').classList.add('body-size');
+        document.getElementById('body-image').classList.remove('dress-margin');
+
 
     }
     cloth_path = ''
