@@ -11,6 +11,8 @@ let backgroundIndex = 0;
 let mentorIndex = 0;
 let cloth_path = '';
 let draggedItem;
+let slcdCategory = '';
+let mentor = '';
 
 //util
 
@@ -31,6 +33,7 @@ function defaultBody() {
 
 function setTops(tops) {
     clearClothes();
+    slcdCategory = 'tops';
     const class_cloth = document.getElementById('clothes')
     for (t of tops) {
         const top = document.createElement('div');
@@ -47,6 +50,7 @@ function setTops(tops) {
 
 function setBottoms(bottoms) {
     clearClothes();
+    slcdCategory = 'bottoms';
     const class_cloth = document.getElementById('clothes');
     for (b of bottoms) {
         const bottom = document.createElement('div');
@@ -63,6 +67,7 @@ function setBottoms(bottoms) {
 
 function setDress(dresses) {
     clearClothes();
+    slcdCategory = 'dresses'
     const class_cloth = document.getElementById('clothes')
     for (d of dresses) {
         const dress = document.createElement('div');
@@ -78,6 +83,8 @@ function setDress(dresses) {
 }
 
 function setBling(accessories) {
+    clearClothes();
+    slcdCategory = 'accessories'
     let currentKing = document.getElementById('head-img').getAttribute('src');
     clearClothes();
     const class_cloth = document.getElementById('clothes')
@@ -120,23 +127,35 @@ function previousBackground() {
     document.body.style.background = `url("${BACKGROUNDS[backgroundIndex]}")`;
 }
 
-function nextMentor() {
+function nextMentor(accessories) {
     if (mentorIndex < MENTORS.length - 1) {
         mentorIndex += 1;
     } else {
         mentorIndex = 0
-    }
+    };
     document.getElementById('head-img').src = MENTORS[mentorIndex];
+    refBling(accessories);
 }
 
-function previousMentor() {
+function previousMentor(accessories) {
     if (mentorIndex == 0) {
         mentorIndex = MENTORS.length - 1;
     } else {
         mentorIndex -= 1;
-    }
-    document.getElementById('head-img').src = MENTORS[mentorIndex]
+    };
+    document.getElementById('head-img').src = MENTORS[mentorIndex];
+    refBling(accessories);
 }
+
+
+function refBling(accessories) {
+    if (slcdCategory == 'accessories') {
+        setBling(accessories)
+    };
+}
+
+
+
 
 //Drag and Drop
 //add event listeners

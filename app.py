@@ -9,6 +9,7 @@ BOTTOMS = listdir('static/images/bottoms')
 DRESSES = listdir('static/images/dresses')
 ACCESSORIES = listdir('static/images/accessories')
 
+
 @app.route('/')
 def main():
     return render_template('dressing.html', tops=TOPS, bottoms=BOTTOMS, dresses=DRESSES, accessories=ACCESSORIES)
