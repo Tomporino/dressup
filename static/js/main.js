@@ -12,7 +12,7 @@ let mentorIndex = 0;
 let cloth_path = '';
 let draggedItem;
 let slcdCategory = '';
-let mentor = '';
+let mentor = MENTORS[mentorIndex];
 
 //util
 
@@ -22,14 +22,14 @@ function clearClothes() {
 
 //set defaults
 
-function defaultHead() {
-    document.getElementById('head-img').src = MENTORS[mentorIndex];
-}
-
-function defaultBody() {
-    document.getElementById('top').src = '/static/images/body/default_top.png';
-    document.getElementById('bottom').src = '/static/images/body/default_bottom.png';
-}
+// function defaultHead() {
+//     document.getElementById('head-img').src = MENTORS[mentorIndex];
+// }
+//
+// function defaultBody() {
+//     document.getElementById('top').src = '/static/images/body/default_top.png';
+//     document.getElementById('bottom').src = '/static/images/body/default_bottom.png';
+// }
 
 function setTops(tops) {
     clearClothes();
@@ -85,7 +85,8 @@ function setDress(dresses) {
 function setBling(accessories) {
     clearClothes();
     slcdCategory = 'accessories'
-    let currentKing = document.getElementById('head-img').getAttribute('src');
+    // let currentKing = document.getElementById('head-img').getAttribute('src');
+    let currentKing = mentor
     clearClothes();
     const class_cloth = document.getElementById('clothes')
     for (a of accessories) {
@@ -102,12 +103,11 @@ function setBling(accessories) {
         }
         
     }
-
     addEventListeners();
 }
 
-defaultBody();
-defaultHead();
+// defaultBody();
+// defaultHead();
 
 //skins and cloth
 function nextBackground() {
